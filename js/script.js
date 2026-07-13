@@ -1,3 +1,5 @@
-'use stickt'
+"use strict";
 
-console.log(123)
+const userName = prompt("Введіть ваше ім'я:");
+
+alert("Hello, " + userName + "! How are you?");
