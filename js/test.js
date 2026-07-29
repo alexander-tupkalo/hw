@@ -65,4 +65,27 @@ const testValues = [
 
 for (let i = 0; i < testValues.length; i++) {
   console.log(describe(testValues[i]));
-}
+};
+
+// Завдання 7
+
+const barMenu = {
+    strongAlcohol: {
+        cognac: ["VS", "VSOP"],
+        rum: ["White", "8 Years Old"],
+        tequila: ["Silver", "Reposado"]
+    },
+
+    wine: {
+        red: ["Cabernet", "Malbec"],
+        white: ["Sauvignon Blanc", "Pinot Grigio"]
+    },
+
+    cocktails: [
+        "Negroni",
+        "Margarita",
+        "Old Fashioned"
+    ]
+};
+
+console.log(describe(barMenu));
