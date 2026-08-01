@@ -1,4 +1,34 @@
 body {
-    box-sizing: border-box;
-    padding: 0 20px;
+    background-color: #19222e;
+    font-family: 'Courier New, Courier, monospace';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: #39504b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    border: 2px solid #39504b;
+    background: rgba(0, 255, 204, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    inset: 0 0 10px rgba(0, 255, 204, 0.2);
+    text-shadow: 0 0 8px rgba(0, 255, 104, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+h1:hover {
+    color: #943d68;
+    border-color: #943d68;
+    background: rgba(255, 0, 127, 0.05);
+    box-shadow: 0 0 20px rgb(255, 0, 127, 0.4);
+    inset: rgba(255, 0, 127, 0.3);
+    text-shadow: 0 0 12px rgb(255, 0, 127, 0.8);
+    transform: scale(1.05);
 }
