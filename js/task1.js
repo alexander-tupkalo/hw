@@ -1,5 +1,9 @@
 "use strict";
 
+let result = "";
+
 for (let number = 20; number <= 30; number += 0.5) {
-    console.log(number);
+    result += number + " ";
 }
+
+console.log(result);
