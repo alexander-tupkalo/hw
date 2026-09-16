@@ -1,4 +1,33 @@
 body {
-    box-sizing: border-box;
-    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding: 40px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin: 0;
+
+}
+
+.input-block {
+   text-align: center;
+}
+#myInput {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#myInput:focus {
+    border-color: #007bff;
+}
+
+#myBox {
+    margin-top: 8px;
+    color: #007bff;
+    font-size: 14px;
 }
