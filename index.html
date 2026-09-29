@@ -3,10 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS HW</title>
-    <script defer src="js/script.js"></script>
+    <title>JS HW-25</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus autem laudantium nobis consectetur, beatae mollitia.
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Mamma Mia</h1>
+            <p>Authentic Italian cuisine</p>
+        </div>
+
+    
+
+    <div class="cards_container" id="cardsContainer">
+        <article class="card">
+            <h2>Carbonara</h2>
+
+            <p class="card__text__short">
+                Classic pasta with bacon, egg and parmesan.
+            </p>
+
+            <p class="card__text__long" hidden>
+                Traditional Roman recipe made with fresh ingredients and parmesan cheese. 
+                Slow-cooked to perfection with crispy bacon and creamy sauce.
+            </p>
+
+            <button class="card__btn" data-read-more-btn>Read more</button>
+        </article>
+
+        <article class="card">
+            <h2>Margherita Pizza</h2>
+
+            <p class="card__text__short">
+                Thin crust with tomato sauce, mozzarella and fresh basil.
+            </p>
+
+            <p class="card__text__long" hidden>
+                Baked in a traditional oven using fresh Italian ingredients. 
+                Each pizza is handmade and cooked to golden perfection in just 3 minutes.
+            </p>
+
+            <button class="card__btn" data-read-more-btn>Read more</button>
+        </article>
+
+        <article class="card">
+            <h2>Mushroom Risotto</h2>
+
+            <p class="card__text__short">
+                Creamy risotto with mushrooms and parmesan.
+            </p>
+
+            <p class="card__text__long" hidden>
+                Arborio rice slowly cooked with vegetable broth, mushrooms and butter.
+                A delicate dish that requires skill and attention to create the perfect 
+                creamy texture.
+            </p>
+
+            <button class="card__btn" data-read-more-btn>Read more</button>
+        </article>
+
+    </div>
+    </div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
