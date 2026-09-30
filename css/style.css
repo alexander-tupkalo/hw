@@ -1,4 +1,60 @@
-body {
-    box-sizing: border-box;
-    padding: 0 20px;
+* { box-sizing: border-box; font-family: sans-serif; }
+
+body { 
+  background: #f4f1eb; 
+  padding: 40px 20px; 
+  margin: 0; 
+}
+
+.container { 
+  max-width: 500px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
+.container > div:first-of-type, 
+#input { width: 100%; } 
+
+.container { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+#input, button { padding: 10px 14px; border-radius: 6px; font-size: 16px; }
+
+#input { 
+  border: 1px solid #ccc; 
+  outline: none; 
+}
+
+#addButton { 
+  border: none; 
+  background: #333; 
+  color: #fff; 
+  cursor: pointer; 
+}
+
+.list { 
+  grid-column: 1 / span 2; 
+  padding: 0; 
+  margin: 8px 0 0 0; 
+  list-style: none; 
+}
+
+.list li { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom: 8px; 
+  padding: 12px; 
+  background: white; 
+  border-radius: 6px; 
+}
+
+.list li.selected { background: #dce8d5; }
+
+.delete__btn { 
+  border: none; 
+  background: #fce8e6; 
+  color: #a8201a; 
+  padding: 4px 8px; 
+  cursor: pointer; 
 }
