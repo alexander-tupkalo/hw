@@ -3,10 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS HW</title>
-    <script defer src="js/script.js"></script>
+    <title>JS HW-27</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus autem laudantium nobis consectetur, beatae mollitia.
+    
+    <form id="registrationForm">
+        <label>
+            Email
+            <input type="email" name="email">
+            <span class="error"></span>
+        </label>
+
+        <label>
+            Пароль
+            <input type="password" name="password">
+            <span class="error"></span>
+        </label>
+
+        <label>
+            Підтвердження пароля
+            <input type="password" name="confirmPassword">
+            <span class="error"></span>
+        </label>
+
+        <label>
+            Вік
+            <input type="number" name="age">
+            <span class="error"></span>
+        </label>
+
+        <label>
+            Місто
+            <select name="city">
+                <option value="">Оберiть мiсто</option>
+                <option value="kyiv">Київ</option>
+                <option value="lviv">Львiв</option>
+                <option value="odesa">Одеса</option>
+                <option value="kharkiv">Харкiв</option>
+                <option value="other">Інше місто</option>
+            </select>
+            <input type="text" name="customCity" id="customCity" placeholder="Введіть назву міста" hidden>
+            <span class="error"></span>
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" name="checkbox">
+            Погоджуюсь з умовами
+            <span class="error"></span>
+        </label>
+
+        <button type="submit">Зареєструватись</button>
+        <button type="button" id="clearButton">Очистити</button>
+
+    </form>
+    <pre id="result"></pre>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>
