@@ -192,6 +192,57 @@ form.addEventListener('submit', function (event) {
     result.textContent = JSON.stringify(data, null, 2);
 });
 
+//=============================================
+
+function saveFormData() {
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    data.checkbox = checkbox.checked;
+
+    localStorage.setItem('registrationForm', JSON.stringify(data));
+}
+
+form.addEventListener('input', saveFormData);
+form.addEventListener('change', saveFormData);
+
+
+function loadFormData() {
+    const savedData = localStorage.getItem('registrationForm');
+
+    if (!savedData) {
+        return;
+    }
+
+    const data = JSON.parse(savedData);
+
+    email.value = data.email || '';
+    password.value = data.password || '';
+    confirmPassword.value = data.confirmPassword || '';
+    age.value = data.age || '';
+
+    if (['kyiv', 'lviv', 'odesa', 'kharkiv'].includes(data.city)) {
+        city.value = data.city;
+    } else if (data.city) {
+        city.value = 'other';
+        customCity.value = data.city;
+    } else {
+        city.value = '';
+    }
+
+    customCity.hidden = city.value !== 'other';
+    checkbox.checked = data.checkbox === true || data.checkbox === 'on';
+
+    validEmail();
+    validPassword();
+    validConfirmPassword();
+    validAge();
+    validCity();
+    validCheckbox();
+}
+
+loadFormData();
+
 //====================================================
 
 clearButton.addEventListener('click', function (){
