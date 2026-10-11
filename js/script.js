@@ -17,7 +17,7 @@ const age = form.querySelector('[name="age"]');
 const ageError = age.nextElementSibling;
 
 const city = form.querySelector('[name="city"]');
-const cityError = city.nextElementSibling;
+const cityError = city.parentElement.querySelector('.error');
 const customCity = form.querySelector('[name="customCity"]');
 
 const checkbox = form.querySelector('[name="checkbox"]');
@@ -26,7 +26,7 @@ const checkboxError = checkbox.parentElement.querySelector('.error');
 //
 function validEmail() {
     if (!email.value) {
-        emailError.textContent = 'Email is required';
+        emailError.textContent = 'Email обов’язковий';
         return false;
     }
 
@@ -115,6 +115,7 @@ function validCity () {
 
     if (city.value === 'other' && !customCity.value.trim()) {
         cityError.textContent = 'Введіть назву свого міста';
+        return false;
     }
 
     cityError.textContent = '';
@@ -125,14 +126,13 @@ city.addEventListener('change', function () {
     if (city.value === 'other') {
         customCity.hidden = false;
     } else {
-        customCity.hidden = false;
+        customCity.hidden = true;
         customCity.value = '';
     }
 
     validCity();
 });
 
-city.addEventListener('change', validCity);
 customCity.addEventListener('input', validCity);
 
 //
@@ -150,4 +150,60 @@ checkbox.addEventListener('change', validCheckbox);
 
 //=====================================================
 
+const validators = [
+    {field: email, validate: validEmail},
+    {field: password, validate: validPassword},
+    {field: confirmPassword, validate: validConfirmPassword},
+    {field: age, validate: validAge},
+    {field: city, validate: validCity},
+    {field: checkbox, validate: validCheckbox}
+];
 
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const validationResult = validators.map(function (item) {
+        return item.validate();
+    });
+
+    const firstInvalidIndex = validationResult.findIndex(function (isValid) {
+        return !isValid;
+    });
+
+    if (firstInvalidIndex !== -1) {
+        validators[firstInvalidIndex].field.focus();
+        return;
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    data.age = Number(data.age);
+    data.checkbox = checkbox.checked;
+
+    if (city.value === 'other') {
+        data.city = customCity.value.trim();
+    } else {
+        data.city = city.options[city.selectedIndex].textContent;
+    }
+
+    delete data.customCity;
+
+    result.textContent = JSON.stringify(data, null, 2);
+});
+
+//====================================================
+
+clearButton.addEventListener('click', function (){
+    form.reset();
+
+    localStorage.removeItem('registrationForm');
+
+    const errors = form.querySelectorAll('.error');
+
+    errors.forEach(function (error) {
+        error.textContent = '';
+    });
+    customCity.hidden = true;
+    result.textContent = '';
+});

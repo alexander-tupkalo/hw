@@ -8,22 +8,22 @@
 </head>
 <body>
     
-    <form id="registrationForm">
+    <form id="registrationForm" novalidate>
         <label>
             Email
-            <input type="email" name="email">
+            <input type="email" name="email" autocomplete="email">
             <span class="error"></span>
         </label>
 
         <label>
             Пароль
-            <input type="password" name="password">
+            <input type="password" name="password" autocomplete="new-password">
             <span class="error"></span>
         </label>
 
         <label>
             Підтвердження пароля
-            <input type="password" name="confirmPassword">
+            <input type="password" name="confirmPassword" autocomplete="new-password">
             <span class="error"></span>
         </label>
 
