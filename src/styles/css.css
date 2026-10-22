@@ -1,0 +1,256 @@
+
+body {
+    margin: 0;
+    background: #f5f5f0;
+    color: #282b29;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 920px;
+    padding: 28px 20px 36px;
+}
+
+h1,
+h5,
+.modal-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+h1 {
+    letter-spacing: -0.5px;
+}
+
+.form-control {
+    min-height: 40px;
+    border: 1px solid #e1e4dc;
+    border-radius: 9px;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #809580;
+    box-shadow: 0 0 0 3px #526b541a;
+}
+
+.btn {
+    min-height: 36px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn-primary,
+[data-filter].active {
+    border-color: #526b54;
+    background: #526b54;
+    color: #fff;
+}
+
+.btn-primary:hover,
+[data-filter].active:hover {
+    border-color: #405642;
+    background: #405642;
+    color: #fff;
+}
+
+.btn-warning {
+    border-color: #e1e5db;
+    background: #edf0e8;
+    color: #41483f;
+}
+
+.btn-warning:hover {
+    border-color: #d1d8ca;
+    background: #e2e8dc;
+    color: #303b30;
+}
+
+.btn-danger {
+    border-color: #f0d8d5;
+    background: #fff2f0;
+    color: #b94c45;
+}
+
+.btn-danger:hover {
+    border-color: #e8c2bd;
+    background: #fde5e1;
+    color: #9f3832;
+}
+
+[data-search-form] {
+    margin-bottom: 16px;
+}
+
+[data-filter-group] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+[data-filter] {
+    padding: 6px 14px;
+    border: 1px solid #e1e4dc;
+    border-radius: 20px;
+    background: #fff;
+    color: #656b64;
+}
+
+[data-todo-list] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list-group-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.list-group-item {
+    padding: 14px;
+    border: 1px solid #e1e4dc !important;
+    border-radius: 11px !important;
+    background: #fff;
+    box-shadow: 0 2px 7px rgb(40 43 41 / 4%);
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.list-group-item > .d-flex {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    align-items: start;
+    column-gap: 8px;
+}
+
+.list-group-item > .d-flex > .flex-grow-1 {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.list-group-item > .d-flex > .form-check {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 2px 0 0;
+    padding: 0;
+}
+
+.list-group-item .form-check-input {
+    float: none;
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0;
+    border: 1.5px solid #aeb8a9;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.form-check-input:checked {
+    border-color: #526b54;
+    background-color: #526b54;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 3px #526b5420;
+}
+
+.list-group-item h5 {
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.list-group-item h5.text-decoration-line-through {
+    color: #92988f;
+}
+
+.list-group-item p {
+    margin-bottom: 8px;
+    color: #666d66;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.list-group-item:has(.form-check-input:checked) {
+    background: #f8f9f5;
+}
+
+.list-group-item > .d-flex > .controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    margin: 8px 0 0;
+}
+
+.controls .btn {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-content {
+    border: 1px solid #e1e4dc;
+    border-radius: 14px;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #eceee7;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 20px 14px 28px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    [data-filter-group] {
+        gap: 6px;
+    }
+
+    [data-filter] {
+        padding: 6px 11px;
+    }
+
+    .list-group-scroll {
+        max-height: 60vh;
+    }
+
+    .list-group-item {
+        padding: 12px;
+    }
+
+    .list-group-item > .d-flex {
+        grid-template-columns: minmax(0, 1fr) 26px;
+        column-gap: 6px;
+    }
+
+    .list-group-item .form-check-input {
+        width: 22px;
+        height: 22px;
+    }
+
+    .list-group-item > .d-flex > .controls {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .controls .btn {
+        min-height: 32px;
+        padding: 5px 8px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
