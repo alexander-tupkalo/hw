@@ -1,3 +1,3 @@
-'use stickt'
+'use strict'
 
 console.log(123)

@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bar Inventory — Редагувати товар</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="bg-dark text-white py-4 mb-4">
+      <div class="container">
+        <h1 class="h3 mb-1">Bar Inventory</h1>
+        <p class="mb-0 text-white-50">Каталог барних товарів</p>
+      </div>
+    </header>
+
+    <main class="container pb-5">
+      <div id="message-container" class="mb-3"></div>
+
+      <div id="content-container">
+        <div class="mb-4">
+          <a href="index.html" class="btn btn-outline-secondary btn-sm">
+            ← До списку товарів
+          </a>
+        </div>
+
+        <h2 id="form-title" class="h4 mb-4">Редагувати товар</h2>
+
+        <form id="product-form">
+          <div class="mb-3">
+            <label for="title" class="form-label">Назва товару</label>
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              placeholder="Введіть назву товару"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Категорія</label>
+            <select id="category" class="form-select" required>
+              <option value="" disabled>Оберіть категорію</option>
+              <option value="Alcohol">Алкоголь</option>
+              <option value="Syrups">Сиропи</option>
+              <option value="Fruits">Фрукти</option>
+              <option value="Soft Drinks">Безалкогольні напої</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Ціна (грн)</label>
+            <input
+              type="number"
+              id="price"
+              class="form-control"
+              placeholder="Введіть ціну"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Кількість</label>
+            <input
+              type="number"
+              id="quantity"
+              class="form-control"
+              placeholder="Введіть кількість"
+              min="0"
+              step="1"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="form-label">Опис</label>
+            <textarea
+              id="description"
+              class="form-control"
+              rows="4"
+              placeholder="Додайте опис товару (необов'язково)"
+            ></textarea>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">
+              Зберегти зміни
+            </button>
+
+            <a href="index.html" class="btn btn-outline-secondary">
+              Скасувати
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script type="module" src="./scripts/pages/edit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bar Inventory - Каталог товарів</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="bg-dark text-white py-4 mb-4">
+      <div class="container">
+        <h1 class="h3 mb-1">Bar Inventory</h1>
+        <p class="mb-0 text-white-50">Каталог барних товарів</p>
+      </div>
+    </header>
+
+    <main class="container pb-5">
+      <div id="message-container" class="mb-3"></div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <h2 class="h4 mb-0">Список товарів</h2>
+
+        <a href="create.html" class="btn btn-primary">
+          Додати товар
+        </a>
+      </div>
+
+      <form id="search-form" class="mb-4">
+        <div class="input-group">
+          <input
+            type="search"
+            id="search-input"
+            class="form-control"
+            placeholder="Пошук за назвою товару..."
+            aria-label="Пошук товарів"
+          />
+
+          <button class="btn btn-outline-secondary" type="submit">
+            Знайти
+          </button>
+        </div>
+      </form>
+
+      <div id="content-container">
+        <div id="products-container"></div>
+      </div>
+    </main>
+
+    <script type="module" src="./scripts/pages/list.js"></script>
+  </body>
+</html>

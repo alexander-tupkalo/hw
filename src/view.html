@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bar Inventory — Інформація про товар</title>
+
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="bg-dark text-white py-4 mb-4">
+      <div class="container">
+        <h1 class="h3 mb-1">Bar Inventory</h1>
+        <p class="mb-0 text-white-50">Каталог барних товарів</p>
+      </div>
+    </header>
+
+    <main class="container pb-5">
+      <div id="message-container" class="mb-3"></div>
+
+      <div id="content-container">
+        <div class="mb-4">
+          <a href="index.html" class="btn btn-outline-secondary btn-sm">
+            ← До списку товарів
+          </a>
+        </div>
+
+        <h2 class="h4 mb-4">Інформація про товар</h2>
+
+        <div id="product-container"></div>
+      </div>
+    </main>
+
+    <script type="module" src="./scripts/pages/details.js"></script>
+  </body>
+</html>
